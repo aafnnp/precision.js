@@ -2,8 +2,8 @@ name: Node.js Package
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - main
 
 jobs:
   generate-changelog:
@@ -38,6 +38,6 @@ jobs:
         with:
           beforePublishScript: |
             echo "Publishing version $npm_package_version..."
-            npm run build
-          registry: 'https://registry.npmjs.org'
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          #   npm run build
+          # registry: 'https://registry.npmjs.org'
+          # token: ${{ secrets.NPM_AUTH_TOKEN }}
