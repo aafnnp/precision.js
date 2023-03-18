@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate changelog
         id: changelog
-        uses: release-it/release-it@v14.1.0
+        uses: release-it/release-it@v0.7.2
         with:
           debug: true
           silent: true
@@ -34,7 +34,7 @@ jobs:
             git push origin HEAD:${{ github.ref }}
 
       - name: Publish package
-        uses: JS-DevTools/npm-publish@v3.3.2
+        uses: JS-DevTools/npm-publish@v1
         with:
           beforePublishScript: |
             echo "Publishing version $npm_package_version..."
